@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors({
     origin: config.BASE_URI,
-    options: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"]
 })
@@ -22,6 +22,7 @@ app.use(cors({
 app.use(express.json({limit: "16kb"}));
 app.use(express.urlencoded({extended: true, limit: "16kb"}));
 app.use(cookieParser());
+app.use(express.static("public"));
 
 
 export default app;
