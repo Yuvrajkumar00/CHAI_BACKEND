@@ -26,6 +26,18 @@ if (!process.env.REFRESH_TOKEN_EXPIRES_IN) {
     throw new Error("Missing REFRESH_TOKEN_EXPIRES_IN in environment variables. Please define it in your .env file.");
 }
 
+if (!process.env.CLOUDINARY_CLOUD_NAME) {   
+    throw new Error("Missing CLOUDINARY_CLOUD_NAME in environment variables. Please define it in your .env file."); 
+}
+
+if (!process.env.CLOUDINARY_API_KEY) {
+    throw new Error("Missing CLOUDINARY_API_KEY in environment variables. Please define it in your .env file.");
+}
+
+if (!process.env.CLOUDINARY_API_SECRET) {
+    throw new Error("Missing CLOUDINARY_API_SECRET in environment variables. Please define it in your .env file.");
+}
+
 const config = {
     PORT: process.env.PORT,
     BASE_URI: process.env.BASE_URI,
@@ -34,6 +46,9 @@ const config = {
     ACCESS_TOKEN_EXPIRES_IN: process.env.ACCESS_TOKEN_EXPIRES_IN,
     REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET,
     REFRESH_TOKEN_EXPIRES_IN: process.env.REFRESH_TOKEN_EXPIRES_IN,
+    CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
 }
 
 export default config;
